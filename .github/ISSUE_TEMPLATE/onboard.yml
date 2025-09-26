@@ -71,3 +71,9 @@ body:
 
         - [Contribution guidelines](./CONTRIBUTING.md)
         - [Code of Conduct](./CODE_OF_CONDUCT.md)
+  - type: textarea
+    id: questions
+    attributes:
+      label: Comments
+      description: Anything your onboardee should know?
+      placeholder: "Feel free to ask questions here!"
