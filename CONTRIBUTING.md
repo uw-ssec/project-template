@@ -85,3 +85,35 @@ pixi run pre-commit
 ```
 pixi run pre-commit-all
 ```
+
+### Access `ssec` CLI
+
+The `ssec` CLI contains some convenience functions for setting up and working
+with this repository. More information about the tool can be found here:
+https://github.com/uw-ssec/ssec-cli
+
+#### Set up autocompletions
+
+```
+pixi run ssec-setup
+```
+
+#### Run `ssec` command
+
+```
+pixi run ssec <options>
+```
+
+#### Run `ssec` command with autocompletion
+
+Open Pixi shell
+
+```
+pixi shell
+```
+
+Start typing :)
+
+```
+ssec <tab>
+```
