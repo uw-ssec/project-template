@@ -5,6 +5,8 @@ body:
   - type: textarea
     id: onboarding-instructions
     attributes:
+      label: Onboarding instructions
+      description: Instructions for the new contributor to get started.
       value: |
         ## Welcome to the project!
 
