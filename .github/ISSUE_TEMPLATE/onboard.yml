@@ -62,7 +62,7 @@ body:
         git checkout -b onboarding-<your-name>
         git add --update
         git commit --message "chore: complete onboarding for <your-name>"
-        gh pr create --title "Onboarding: <your-name>" --body "This is my first PR!" --label "onboarding"
+        gh pr create --title "Onboarding: <your-name>" --body "This is my first PR!" --label "onboarding" --web
         ```
 
         ### Resources
