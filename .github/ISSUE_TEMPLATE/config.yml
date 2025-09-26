@@ -24,3 +24,8 @@ issue_templates:
     description: Report slowness or excessive resource use.
     labels: [performance]
     body: performance_issue.yml
+  - name: Onboard a new contributor
+    id: onboard_contributor
+    description: Onboard a new contributor to the project.
+    labels: [onboarding]
+    body: onboard.yml
