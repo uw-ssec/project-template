@@ -2,7 +2,8 @@ name: "👋 Onboard a new contributor"
 description: "Help a new contributor get started with the project."
 labels: ["onboarding"]
 body:
-  - type: markdown
+  - type: textarea
+    id: onboarding-instructions
     attributes:
       value: |
         ## Welcome to the project!
@@ -62,7 +63,7 @@ body:
         git checkout -b onboarding-<your-name>
         git add --update
         git commit --message "chore: complete onboarding for <your-name>"
-        gh pr create --title "Onboarding: <your-name>" --body "This is my first PR!" --label "onboarding" --web
+        gh pr create --title "Onboarding: <your-name>" --body "This is my first PR" --label "onboarding" --web
         ```
 
         ### Resources
@@ -72,8 +73,8 @@ body:
         - [Contribution guidelines](./CONTRIBUTING.md)
         - [Code of Conduct](./CODE_OF_CONDUCT.md)
   - type: textarea
-    id: questions
+    id: comments
     attributes:
       label: Comments
       description: Anything your onboardee should know?
-      placeholder: "Feel free to ask questions here!"
+      placeholder: "Feel free to add comments here!"
