@@ -1,6 +1,6 @@
 exclude: |
   (?x)^(
-    pixi.lock
+    pixi.lock|onboarded.md
   )$
 
 ci:
