@@ -39,7 +39,8 @@ Your contributions make this project better—thank you for your support! 🚀
 
 #### Install Pixi
 
-Pixi is used in this project to manage dependencies and environments and to set up some convenient ways to run code and tools within those environments.
+Pixi is used in this project to manage dependencies and environments and to set
+up some convenient ways to run code and tools within those environments.
 
 To get started, install [Pixi](https://pixi.sh/latest/) using either the
 [instructions on their website](https://pixi.sh/latest/#installation), or the
@@ -55,4 +56,32 @@ curl -fsSL https://pixi.sh/install.sh | sh
 
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm -useb https://pixi.sh/install.ps1 | iex"
+```
+
+### Configure pre-commit
+
+PRs will fail style and formatting checks as configured by
+[pre-commit](https://pre-commit.com/), but you can set up your local repository
+such that precommit runs every time you commit. This way, you can fix any errors
+before you send out pull requests!
+
+#### Configure pre-commit to run on every commit
+
+Then, once Pixi is installed, run the following command to set up pre-commit
+checks on every commit
+
+```
+pixi run pre-commit-install
+```
+
+#### Manually run pre-commit on non-committed files
+
+```
+pixi run pre-commit
+```
+
+#### Manually run pre-commit on all files
+
+```
+pixi run pre-commit-all
 ```

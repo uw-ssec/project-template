@@ -6,5 +6,9 @@ platforms = ["osx-arm64"]
 version = "0.1.0"
 
 [tasks]
+pre-commit-install = "pre-commit install"
+pre-commit-all = "pre-commit run --all-files"
+pre-commit = "pre-commit run"
 
 [dependencies]
+pre-commit = ">=4.3.0"
