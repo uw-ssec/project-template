@@ -1,0 +1,10 @@
+[workspace]
+authors = ["University of Washington Scientific Software Engineering Center"]
+channels = ["conda-forge"]
+name = "project-template"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
