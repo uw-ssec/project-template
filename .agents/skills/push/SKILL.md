@@ -1,3 +1,12 @@
+---
+name: push
+description:
+  Use when local commits need to reach the remote, when a new branch needs its
+  upstream set, or before opening a pull request.
+---
+
+# Push
+
 Push the current branch to the remote repository.
 
 ## Instructions
@@ -19,8 +28,8 @@ Push the current branch to the remote repository.
 
 - NEVER force push (`--force`, `-f`) unless the user explicitly asks
 - NEVER force push to `main` or `master` — warn the user and refuse
-- If there are uncommitted changes, ask whether to commit first (using /commit
-  conventions) or push what's already committed
+- If there are uncommitted changes, ask whether to commit first (using the
+  `commit` skill's conventions) or push what's already committed
 - If push is rejected due to remote changes, suggest `git pull --rebase` and ask
   before proceeding
 - If the branch doesn't track a remote, use `git push -u` to set the upstream

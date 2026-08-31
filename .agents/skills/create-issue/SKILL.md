@@ -1,12 +1,22 @@
+---
+name: create-issue
+description:
+  Use when work needs tracking in GitHub rather than implementing it now — a bug
+  to file, a feature to capture, or follow-up work discovered mid-task.
+---
+
+# Create Issue
+
 Create a GitHub issue for tracking work.
 
 ## Arguments
 
-$ARGUMENTS — a description of the issue to create
+A description of the issue to create.
 
 ## Instructions
 
-1. Based on `$ARGUMENTS`, determine:
+1. Based on the description, determine:
+
    - **Type**: `feat`, `fix`, `refactor`, `docs`, `chore`, `perf`, `ci`,
      `build`, `test`
    - **Scope**: the area of the codebase affected (e.g., `marketing`,
@@ -59,5 +69,5 @@ EOF
 - Use imperative mood ("add" not "adds", "fix" not "fixes")
 - Requirements section should have checkboxes for trackable items
 - Omit sections that aren't relevant (don't pad with empty sections)
-- If `$ARGUMENTS` is vague, ask clarifying questions before creating
+- If the description is vague, ask clarifying questions before creating
 - NEVER include sensitive information in the issue body
