@@ -49,8 +49,11 @@ analyzing changes.
 
    ```bash
    git add CHANGELOG.md
-   git commit -m "chore(release): prepare vX.Y.Z"
+   git commit -m "chore(release): prepare vX.Y.Z" -m "Co-Authored-By: <tool name>"
    ```
+
+   The trailer carries no `<email>` component — see the `commit` skill for the
+   format. Omit it entirely if the release was cut without AI assistance.
 
 8. Create the git tag:
 
@@ -129,4 +132,5 @@ analyzing changes.
 - If CHANGELOG.md doesn't exist or has no `[Unreleased]` section, warn and ask
   how to proceed
 - Never commit generated zip files — they are upload artifacts only
+- NEVER add "Generated with" or similar marketing lines to the release notes
 - NEVER include sensitive information in the release notes or changelog
