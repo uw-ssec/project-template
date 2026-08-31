@@ -40,6 +40,16 @@ Load the rule file whose trigger matches what you are about to do.
 | [onboarding.md](.agents/rules/onboarding.md)                           | First-time setup, or helping a new contributor get started                 |
 | [troubleshooting.md](.agents/rules/troubleshooting.md)                 | A documented command fails or behaves unexpectedly                         |
 
+## Provenance
+
+The behavioral and contribution rules are adapted from two upstream sources and
+generalized for this repository:
+
+- [obra/superpowers](https://github.com/obra/superpowers) `CLAUDE.md` — agent
+  contribution discipline (`contribution-discipline.md`).
+- [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
+  `CLAUDE.md` — behavioral guidelines that reduce common LLM coding mistakes
+  (`working-agreement.md`).
 
 ## Trust These Instructions
 
