@@ -1,22 +1,34 @@
+---
+name: merge-pr
+description:
+  Use when a pull request is approved and ready to land, or when review has
+  finished and the branch needs cleaning up afterward.
+---
+
+# Merge PR
+
 Merge a pull request and clean up branches.
 
 ## Arguments
 
-$ARGUMENTS — PR number or URL (optional, defaults to current branch's PR)
+Optional: a PR number or URL. Defaults to the current branch's PR.
 
 ## Instructions
 
 1. Determine the PR:
-   - If `$ARGUMENTS` is provided, use it as the PR number or URL
+
+   - If a PR number or URL was passed, use it
    - If not, find the PR for the current branch:
      `gh pr view --json number,title,state,headRefName`
 
 2. Check PR status:
+
    - `gh pr view <number> --json state,mergeable,mergeStateStatus,statusCheckRollup,title,headRefName`
    - If checks are failing, warn the user and ask whether to proceed
    - If there are merge conflicts, tell the user and stop
 
 3. Check for local uncommitted changes:
+
    - `git status`
    - If there are unstaged changes, stash them before proceeding: `git stash`
 
@@ -29,6 +41,7 @@ $ARGUMENTS — PR number or URL (optional, defaults to current branch's PR)
    Use `--squash` by default (consistent with this repo's history).
 
 5. Clean up locally:
+
    - Switch to main if not already: `git checkout main`
    - Pull the merged changes: `git pull origin main`
    - Prune stale remote refs: `git fetch --prune`
@@ -36,6 +49,7 @@ $ARGUMENTS — PR number or URL (optional, defaults to current branch's PR)
    - If changes were stashed, restore them: `git stash pop`
 
 6. Verify cleanup:
+
    - `git branch -a | grep <branch-name>` to confirm branch is gone everywhere
 
 7. Confirm: "PR #N merged into main. Branch `<name>` deleted locally and

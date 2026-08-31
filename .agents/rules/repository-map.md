@@ -24,9 +24,10 @@ no application code — it serves as a starting point for new projects.
 ```
 .
 ├── .agents/
-│   └── rules/                   # On-demand rules referenced by AGENTS.md
+│   ├── rules/                   # On-demand rules referenced by AGENTS.md
+│   └── skills/                  # User-invocable skills (/commit, /create-pr, ...)
 ├── .claude/
-│   └── commands/                # Slash commands for git/GitHub workflows
+│   └── skills -> ../.agents/skills  # Symlink so Claude Code discovers the skills
 ├── .github/
 │   ├── dependabot.yml           # Dependabot config for GitHub Actions
 │   ├── pull_request_template.md # PR template (requires pre-commit checks)
@@ -38,6 +39,7 @@ no application code — it serves as a starting point for new projects.
 ├── pixi.lock                    # Lock file (auto-generated, don't manually edit)
 ├── .gitignore                   # Ignores .pixi/ and .DS_Store
 ├── AGENTS.md                    # Entry point for AI assistants
+├── CLAUDE.md                    # Points Claude Code at AGENTS.md (@AGENTS.md)
 ├── CODE_OF_CONDUCT.md           # Contributor Covenant v2.0
 ├── CONTRIBUTING.md              # Contribution guidelines (references Conventional Commits)
 ├── LICENSE                      # BSD 3-Clause License

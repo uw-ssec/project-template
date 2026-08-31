@@ -1,3 +1,13 @@
+---
+name: commit
+description:
+  Use when changes in the working tree are ready to be recorded in git on the
+  current branch — staged or unstaged edits that need a conventional-commit
+  message.
+---
+
+# Commit
+
 Commit staged and unstaged changes to the current branch.
 
 ## Instructions

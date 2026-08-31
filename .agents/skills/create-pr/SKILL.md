@@ -1,8 +1,18 @@
+---
+name: create-pr
+description:
+  Use when a branch's work is complete and ready to be proposed for review
+  against main, or when the user asks to open a pull request.
+---
+
+# Create PR
+
 Create a pull request for the current branch.
 
 ## Instructions
 
 1. Run these commands in parallel to understand the current state:
+
    - `git status` (never use `-uall`)
    - `git diff --stat` (check for uncommitted changes)
    - `git branch --show-current` (current branch)
@@ -14,6 +24,7 @@ Create a pull request for the current branch.
 3. If the branch hasn't been pushed, push with `git push -u origin <branch>`.
 
 4. Analyze ALL commits in the branch (not just the latest) to draft:
+
    - **Title**: Use conventional commit format: `type(scope): short description`
      (under 70 chars)
    - **Body**: Structured summary with test plan
@@ -39,7 +50,7 @@ EOF
 
 ## Title Convention
 
-Use the same conventional commit types as /commit:
+Use the same conventional commit types as the `commit` skill:
 
 - `feat(scope):` for new features
 - `fix(scope):` for bug fixes
@@ -56,4 +67,5 @@ Use the same conventional commit types as /commit:
   commit type
 - NEVER add `Co-Authored-By` trailers, AI attribution, or "Generated with" lines
   to PR titles, bodies, or commit messages
-- If the PR is large or complex, consider breaking it into smaller PRs with focused scope and clear dependencies
+- If the PR is large or complex, consider breaking it into smaller PRs with
+  focused scope and clear dependencies
