@@ -16,13 +16,14 @@ no application code — it serves as a starting point for new projects.
 - **Size:** Small (~20 files)
 - **Languages:** Configuration files (TOML, YAML, Markdown)
 - **Build System:** Pixi (v0.49.0+)
-- **Platform:** macOS (osx-arm64), easily extensible to other platforms
+- **Platform:** macOS (osx-arm64) and Linux (linux-64, linux-aarch64)
 - **License:** BSD 3-Clause
 
 ## Project Structure & Key Files
 
 ```
 .
+├── .devcontainer/               # Codespaces / Dev Containers image: pixi + coding agent CLIs
 ├── .agents/
 │   ├── rules/                   # On-demand rules referenced by AGENTS.md
 │   └── skills/                  # User-invocable skills (/commit, /create-pr, ...)

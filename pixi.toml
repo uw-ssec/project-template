@@ -3,7 +3,7 @@
 authors = ["University of Washington Scientific Software Engineering Center"] # Project authors
 channels = ["conda-forge"] # Conda channels for dependencies
 name = "project-template" # Project name
-platforms = ["osx-arm64"] # Supported platforms for development and deployment
+platforms = ["osx-arm64", "linux-64", "linux-aarch64"] # Supported platforms for development and deployment
 version = "0.1.0" # Project version
 
 # The environment configurations for different development scenarios
