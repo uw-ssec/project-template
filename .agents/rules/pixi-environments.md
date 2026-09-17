@@ -30,6 +30,7 @@ pixi install
 # This installs:
 # - pre-commit (>=4.3.0)
 # - gh (GitHub CLI, >=2.0.0)
+# - okf-agent-memory (>=0.3.1,<0.4) — provides the `okf` CLI
 # - Creates .pixi/envs/default directory
 ```
 
@@ -48,6 +49,23 @@ command is idempotent and safe to run multiple times.
    - Includes: ssec-cli (installed from GitHub)
    - Use for: first-time setup, onboarding new contributors
 
+## Channels
+
+Conda packages resolve from two channels, both hosted on prefix.dev:
+
+- `https://prefix.dev/conda-forge` — the prefix.dev mirror of conda-forge.
+- `https://prefix.dev/lsetiawan/uw-ssec` — the SSEC channel, which publishes
+  `okf-agent-memory`.
+
+The mirror is listed **instead of** the bare `conda-forge` name, not alongside
+it. Listing both is a no-op: channel priority means the anaconda.org copy wins
+every time and the mirror is never consulted. If you re-add `conda-forge` by
+name, the mirror stops taking effect.
+
+Channel changes invalidate `pixi.lock` and force a full re-solve against current
+repodata, which can bump unrelated packages. Check the lockfile diff for
+incidental version changes before committing.
+
 ## Adding Dependencies
 
 ```bash
@@ -64,12 +82,22 @@ pixi add --feature <feature-name> <package-name>
 pixi install
 ```
 
+To pull a package from a channel that is not yet in the workspace, register the
+channel first, then scope the spec with `channel::package`. There is no
+`--channel` flag on `pixi add`:
+
+```bash
+pixi workspace channel add https://prefix.dev/<owner>/<channel>
+pixi add "https://prefix.dev/<owner>/<channel>::<package-name>"
+```
+
 Adding a dependency to this template needs justification — see
 [contribution-discipline.md](contribution-discipline.md).
 
 ## pixi.toml Structure
 
-- **`[workspace]`**: Project metadata (name, version, authors, platforms)
+- **`[workspace]`**: Project metadata (name, version, authors, platforms,
+  channels)
 - **`[environments]`**: Named environments with feature sets
 - **`[dependencies]`**: Conda dependencies for all environments
 - **`[pypi-dependencies]`**: PyPI dependencies for all environments
@@ -92,9 +120,25 @@ Run `pixi task list` to see all available tasks:
 ```bash
 # Check GitHub CLI version
 pixi run gh --version
-# ✓ Should show v2.81.0 or higher
+# ✓ Should show v2.81.0 or higher (currently v2.101.0)
 
 # Use GitHub CLI for any repo operations
 pixi run gh <command>
 # Examples: gh issue list, gh pr create, etc.
 ```
+
+## OKF Agent Memory Usage
+
+The `okf-agent-memory` package installs a binary named **`okf`**, not
+`okf-agent-memory`:
+
+```bash
+# Check the OKF CLI version
+pixi run okf version
+# ✓ Should show 0.3.1 (OKF v0.2 specification) or higher
+
+pixi run okf --help
+```
+
+It backs the optional knowledge-bundle pattern described in
+[mkdocs-okf-knowledge-bundle.md](mkdocs-okf-knowledge-bundle.md).
