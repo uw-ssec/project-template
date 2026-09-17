@@ -8,12 +8,11 @@ version = "0.1.0" # Project version
 
 # The environment configurations for different development scenarios
 [environments]
-default = { features = ["pre-commit", "gh-cli"], solve-group = "default" } # The default development environment with pre-commit and GitHub CLI
+default = { features = ["pre-commit", "gh-cli", "okf"], solve-group = "default" } # The default development environment with pre-commit, GitHub CLI, and OKF agent memory
 onboard = { features = ["pre-commit", "gh-cli", "onboard"], solve-group = "default" } # The onboarding environment with additional setup tasks
 
 # The project dependencies
 [dependencies]
-okf-agent-memory = { version = ">=0.3.1,<0.4", channel = "https://prefix.dev/lsetiawan/uw-ssec" }
 
 # The project dependencies from PyPI
 [pypi-dependencies]
@@ -24,6 +23,10 @@ okf-agent-memory = { version = ">=0.3.1,<0.4", channel = "https://prefix.dev/lse
 # GitHub CLI feature for interacting with GitHub from the command line
 [feature.gh-cli.dependencies]
 gh = ">=2.0.0"
+
+# OKF feature providing the `okf` agent-memory CLI
+[feature.okf.dependencies]
+okf-agent-memory = { version = ">=0.3.1,<0.4", channel = "https://prefix.dev/lsetiawan/uw-ssec" }
 
 # Pre-commit feature for code quality and consistency
 [feature.pre-commit.dependencies]

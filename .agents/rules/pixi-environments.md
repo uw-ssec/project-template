@@ -39,7 +39,7 @@ command is idempotent and safe to run multiple times.
 
 ## Available Environments
 
-1. **`default`** (features: `pre-commit`, `gh-cli`)
+1. **`default`** (features: `pre-commit`, `gh-cli`, `okf`)
 
    - Standard development environment
    - Use for: general development, running pre-commit checks
@@ -47,6 +47,7 @@ command is idempotent and safe to run multiple times.
 2. **`onboard`** (features: `pre-commit`, `gh-cli`, `onboard`)
    - Extended environment with onboarding tools
    - Includes: ssec-cli (installed from GitHub)
+   - Does **not** include the `okf` feature
    - Use for: first-time setup, onboarding new contributors
 
 ## Channels
@@ -129,8 +130,12 @@ pixi run gh <command>
 
 ## OKF Agent Memory Usage
 
-The `okf-agent-memory` package installs a binary named **`okf`**, not
-`okf-agent-memory`:
+`okf-agent-memory` is supplied by the `okf` feature rather than the top-level
+`[dependencies]`, so a downstream project can drop it by removing `"okf"` from
+the `default` environment's feature list. It is available in `default` but not
+in `onboard`.
+
+The package installs a binary named **`okf`**, not `okf-agent-memory`:
 
 ```bash
 # Check the OKF CLI version
