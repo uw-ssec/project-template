@@ -14,6 +14,13 @@ execution. Install Pixi by following the
 
 ## Getting Started
 
+### GitHub Codespaces / Dev Containers
+
+The repository ships a [`.devcontainer/`](.devcontainer/) configuration. Open it
+in GitHub Codespaces (or VS Code Dev Containers) to get a container with Pixi
+and the Claude Code, Codex, Copilot CLI, and OpenCode agent CLIs preinstalled;
+the Pixi environment is installed and auto-activated on first start.
+
 ### Installation
 
 Install dependencies:
