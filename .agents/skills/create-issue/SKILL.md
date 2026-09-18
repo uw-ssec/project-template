@@ -19,9 +19,8 @@ A description of the issue to create.
 
    - **Type**: `feat`, `fix`, `refactor`, `docs`, `chore`, `perf`, `ci`,
      `build`, `test`
-   - **Scope**: the area of the codebase affected (e.g., `marketing`,
-     `platform`, `developer`, `billing`, `db`, `auth`, `worker`, `ui`, `tokens`,
-     `infra`)
+   - **Scope**: the area of the codebase affected (e.g., `data`, `pipeline`,
+     `io`, `cli`, `viz`, `docs`, `ci`, `deps`, `infra`)
    - **Title**: conventional commit format:
      `type(scope): short imperative description`
 
@@ -54,13 +53,13 @@ EOF
 
 ## Title Convention
 
-| Type              | Example                                                             |
-| ----------------- | ------------------------------------------------------------------- |
-| `feat(marketing)` | `feat(marketing): add testimonial carousel to landing page`         |
-| `fix(auth)`       | `fix(auth): resolve PKCE exchange failure on second localhost port` |
-| `refactor(db)`    | `refactor(db): normalize ingredient tables to reduce duplication`   |
-| `docs(guides)`    | `docs(guides): add Stripe webhook deployment checklist`             |
-| `chore(deps)`     | `chore(deps): upgrade React to 19.3`                                |
+| Type             | Example                                                          |
+| ---------------- | ---------------------------------------------------------------- |
+| `feat(pipeline)` | `feat(pipeline): write processed samples as partitioned Parquet` |
+| `fix(io)`        | `fix(io): handle empty input files without crashing`             |
+| `refactor(data)` | `refactor(data): derive table schemas from the dataclasses`      |
+| `docs(guides)`   | `docs(guides): add notebook setup walkthrough`                   |
+| `chore(deps)`    | `chore(deps): bump numpy to 2.4`                                 |
 
 ## Rules
 

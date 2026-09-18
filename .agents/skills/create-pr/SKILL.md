@@ -67,8 +67,8 @@ Use the same conventional commit types as the `commit` skill:
   commit type
 - On an AI-assisted PR, disclose it: fill the "AI assistance disclosure" section
   of `.github/pull_request_template.md`, and/or apply the `ai-assisted` label.
-  Commits may carry a `Co-Authored-By:` trailer naming the tool, with **no
-  `<email>` component** — see the `commit` skill for the format
+  AI-assisted commits carry an `Assisted-by: <harness>:<model>` trailer and
+  never an agent-added `Signed-off-by:` — see the `commit` skill for the format
 - NEVER add "Generated with" or similar marketing lines to PR titles or bodies.
   This is attribution, not promotion
 - If the PR is large or complex, consider breaking it into smaller PRs with
