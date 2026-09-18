@@ -26,7 +26,7 @@ gh = ">=2.0.0"
 
 # OKF feature providing the `okf` agent-memory CLI
 [feature.okf.dependencies]
-okf-agent-memory = { version = ">=0.3.1,<0.4", channel = "https://prefix.dev/lsetiawan/uw-ssec" }
+okf-agent-memory = { version = ">=0.4.0,<0.5", channel = "https://prefix.dev/lsetiawan/uw-ssec" }
 
 # Pre-commit feature for code quality and consistency
 [feature.pre-commit.dependencies]
