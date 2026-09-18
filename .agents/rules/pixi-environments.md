@@ -30,7 +30,7 @@ pixi install
 # This installs:
 # - pre-commit (>=4.3.0)
 # - gh (GitHub CLI, >=2.0.0)
-# - okf-agent-memory (>=0.3.1,<0.4) — provides the `okf` CLI
+# - okf-agent-memory (>=0.4.0,<0.5) — provides the `okf` CLI
 # - Creates .pixi/envs/default directory
 ```
 
@@ -140,7 +140,7 @@ The package installs a binary named **`okf`**, not `okf-agent-memory`:
 ```bash
 # Check the OKF CLI version
 pixi run okf version
-# ✓ Should show 0.3.1 (OKF v0.2 specification) or higher
+# ✓ Should show 0.4.0 (OKF v0.2 specification) or higher
 
 pixi run okf --help
 ```
