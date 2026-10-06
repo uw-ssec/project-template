@@ -40,7 +40,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/libuuid-2.42.4-hcfc3c73_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/libzlib-1.3.2-h25fd6f3_3.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ncurses-6.6-hdb14827_1.conda
-      - conda: https://prefix.dev/conda-forge/linux-64/okf-agent-memory-0.4.4-hfc2019e_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/okf-agent-memory-0.5.0-hfc2019e_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/openssl-3.6.5-h781a0a9_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/python-3.14.8-hcd007b5_100_cp314.conda
       - conda: https://prefix.dev/conda-forge/linux-64/pyyaml-6.0.3-py314h67df5f8_1.conda
@@ -82,7 +82,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-aarch64/libuuid-2.42.4-hd6fdeab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/libzlib-1.3.2-hdc9db2a_3.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/ncurses-6.6-h2b6f883_1.conda
-      - conda: https://prefix.dev/conda-forge/linux-aarch64/okf-agent-memory-0.4.4-h7d44237_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-aarch64/okf-agent-memory-0.5.0-h22914b5_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/openssl-3.6.5-he6ad1d5_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/python-3.14.8-hbec3b18_100_cp314.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/pyyaml-6.0.3-py314h807365f_1.conda
@@ -134,7 +134,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/osx-arm64/libsqlite-3.53.4-h34a968b_103.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/libzlib-1.3.2-h8088a28_3.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/ncurses-6.6-he64c551_1.conda
-      - conda: https://prefix.dev/conda-forge/osx-arm64/okf-agent-memory-0.4.4-hf76c51c_0.conda
+      - conda: https://prefix.dev/conda-forge/osx-arm64/okf-agent-memory-0.5.0-hf76c51c_0.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/openssl-3.6.5-h55eecbc_0.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/python-3.14.8-h0ae1c2c_100_cp314.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/pyyaml-6.0.3-py314h6e9b3f0_1.conda
@@ -531,15 +531,15 @@ packages:
     - ncurses >=6.6,<7.0a0
   size: 911196
   timestamp: 1786355078102
-- conda: https://prefix.dev/conda-forge/linux-64/okf-agent-memory-0.4.4-hfc2019e_0.conda
-  sha256: 3f1fc8474fddeac444998c484269f2bd28275fa2ca4c0ae9c957dc56bec8c4be
-  md5: be4798a6144e092094834214e90f12b4
+- conda: https://prefix.dev/conda-forge/linux-64/okf-agent-memory-0.5.0-hfc2019e_0.conda
+  sha256: 9b9dfce4d04f51d5eb75977a9ad85590a81187d1e5dd8181a741c8f248793469
+  md5: be4859137abbfc8c63248b0220a9741a
   license: MIT
   license_family: MIT
   purls: []
   run_exports: {}
-  size: 3268339
-  timestamp: 1790616237339
+  size: 3355427
+  timestamp: 1790959173401
 - conda: https://prefix.dev/conda-forge/linux-64/openssl-3.6.5-h781a0a9_0.conda
   sha256: 9c1533f1cf784f0e250919c0c9762d0b0e6bc727a79290ffb7cea1ceca1d038c
   md5: 5a51a2ea653f120240b1a9bf76e0aae9
@@ -903,15 +903,15 @@ packages:
     - ncurses >=6.6,<7.0a0
   size: 955422
   timestamp: 1786355019431
-- conda: https://prefix.dev/conda-forge/linux-aarch64/okf-agent-memory-0.4.4-h7d44237_0.conda
-  sha256: fb2d18e198878050d8e0f053c37384b44d534bea71a92250999d8f583fc1083a
-  md5: 5d4d71c79841f17bf7ca0187031cf324
+- conda: https://prefix.dev/conda-forge/linux-aarch64/okf-agent-memory-0.5.0-h22914b5_0.conda
+  sha256: e26bccb7493d24b17e9f2add3b680e48bff68820b0fe1c7ed33c931b9e3593a0
+  md5: 53c7364f2171fac483b2fee3af39b852
   license: MIT
   license_family: MIT
   purls: []
   run_exports: {}
-  size: 2945539
-  timestamp: 1790704114081
+  size: 3022571
+  timestamp: 1790959169932
 - conda: https://prefix.dev/conda-forge/linux-aarch64/openssl-3.6.5-he6ad1d5_0.conda
   sha256: 238136f1df197ecd89bafd728a34d0642176f3170423d13d8276746d675a9485
   md5: 92aec5ec417d2ce9ae109e6c5ad377ff
@@ -1395,15 +1395,15 @@ packages:
     - ncurses >=6.6,<7.0a0
   size: 804298
   timestamp: 1786355189145
-- conda: https://prefix.dev/conda-forge/osx-arm64/okf-agent-memory-0.4.4-hf76c51c_0.conda
-  sha256: 6cdf21ce67cd10e71a787829b7327d8dd408cb1b9b25e84495c8d5db7e7f40bf
-  md5: 5d8343289ba1d152927a4ad6c7773e82
+- conda: https://prefix.dev/conda-forge/osx-arm64/okf-agent-memory-0.5.0-hf76c51c_0.conda
+  sha256: a36d34155dc21ed047e455d943a9b385e59d8c44d6a8c845ff4a0669e87e5e96
+  md5: 5c3e31070a506784e8e62980aa40bd3a
   license: MIT
   license_family: MIT
   purls: []
   run_exports: {}
-  size: 2951362
-  timestamp: 1790704335312
+  size: 3030022
+  timestamp: 1790959296597
 - conda: https://prefix.dev/conda-forge/osx-arm64/openssl-3.6.5-h55eecbc_0.conda
   sha256: 44fbc526456571a9fb8fa18157f6f269d4d4bd40eef20183a93b9c9296f94497
   md5: 45d9179cdf6e53d88aec034246f0dad6
