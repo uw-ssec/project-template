@@ -30,7 +30,7 @@ pixi install
 # This installs:
 # - pre-commit (>=4.3.0)
 # - gh (GitHub CLI, >=2.0.0)
-# - okf-agent-memory (>=0.4.0,<0.5) — provides the `okf` CLI
+# - okf-agent-memory (>=0.5.0,<0.6) — provides the `okf` CLI
 # - Creates .pixi/envs/default directory
 ```
 
@@ -52,11 +52,8 @@ command is idempotent and safe to run multiple times.
 
 ## Channels
 
-Conda packages resolve from two channels, both hosted on prefix.dev:
-
-- `https://prefix.dev/conda-forge` — the prefix.dev mirror of conda-forge.
-- `https://prefix.dev/lsetiawan/uw-ssec` — the SSEC channel, which publishes
-  `okf-agent-memory`.
+Conda packages resolve from a single channel, `https://prefix.dev/conda-forge` —
+the prefix.dev mirror of conda-forge. Do not add other channels.
 
 The mirror is listed **instead of** the bare `conda-forge` name, not alongside
 it. Listing both is a no-op: channel priority means the anaconda.org copy wins
@@ -81,15 +78,6 @@ pixi add --feature <feature-name> <package-name>
 
 # Always run after manual pixi.toml edits
 pixi install
-```
-
-To pull a package from a channel that is not yet in the workspace, register the
-channel first, then scope the spec with `channel::package`. There is no
-`--channel` flag on `pixi add`:
-
-```bash
-pixi workspace channel add https://prefix.dev/<owner>/<channel>
-pixi add "https://prefix.dev/<owner>/<channel>::<package-name>"
 ```
 
 Adding a dependency to this template needs justification — see
@@ -140,7 +128,7 @@ The package installs a binary named **`okf`**, not `okf-agent-memory`:
 ```bash
 # Check the OKF CLI version
 pixi run okf version
-# ✓ Should show 0.4.0 (OKF v0.2 specification) or higher
+# ✓ Should show 0.5.0 (OKF v0.2 specification) or higher
 
 pixi run okf --help
 ```
