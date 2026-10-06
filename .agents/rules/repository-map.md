@@ -35,6 +35,7 @@ no application code — it serves as a starting point for new projects.
 │   ├── release.yml              # Release notes configuration
 │   ├── workflows/               # GitHub Actions (zizmor workflow linting, Copilot agent setup)
 │   └── ISSUE_TEMPLATE/          # Issue templates (bug, feature, docs, onboard, etc.)
+├── knowledge/                   # OKF project memory, managed by the okf CLI (okf-memory skill)
 ├── .pre-commit-config.yaml      # Pre-commit hook configuration
 ├── pixi.toml                    # **PRIMARY CONFIG**: Dependencies, tasks, features
 ├── pixi.lock                    # Lock file (auto-generated, don't manually edit)

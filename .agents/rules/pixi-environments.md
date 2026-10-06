@@ -121,7 +121,9 @@ pixi run gh <command>
 `okf-agent-memory` is supplied by the `okf` feature rather than the top-level
 `[dependencies]`, so a downstream project can drop it by removing `"okf"` from
 the `default` environment's feature list. It is available in `default` but not
-in `onboard`.
+in `onboard`. Dropping the feature also means deleting the `okf-memory` skill
+(`.agents/skills/okf-memory/`) and the `knowledge/` bundle, which both need the
+`okf` CLI.
 
 The package installs a binary named **`okf`**, not `okf-agent-memory`:
 
