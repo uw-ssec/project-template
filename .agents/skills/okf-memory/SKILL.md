@@ -69,7 +69,7 @@ editing these fields by hand is allowed; validate afterwards.
 | Field         | Meaning and rules                                                                     |
 | ------------- | ------------------------------------------------------------------------------------- |
 | `code_refs`   | Paths or globs the concept governs, relative to the repo root. No `..`, no `/` start. |
-| `governance`  | `hold`, `constraint`, or `context`; surfaced by `search --for-path`.                  |
+| `governance`  | `hold`, `constraint`, or `context` (the default); surfaced by `search --for-path`.    |
 | `stale_after` | `YYYY-MM-DD`; `validate --stale` fails the gate once it passes.                       |
 | `sources`     | Documents, commits, or URLs the knowledge came from.                                  |
 | `verified`    | Human-only. Never write it; `generated` is the agent's provenance and okf sets it.    |
@@ -81,6 +81,18 @@ editing these fields by hand is allowed; validate afterwards.
   prettier over the bundle by hand, and keep the exclusion in
   `.pre-commit-config.yaml`.
 - Keep `description:` on one line. Detail goes in the body.
+- Write `--body` with real line breaks, for example bash
+  `$'## Context\n\nIt\'s offline.'`, escaping each `'` inside as `\'`. In a
+  plain `"..."` string, `\n` reaches okf as a backslash and an `n`, and okf
+  stores it that way.
+- Once the bundle holds two or more concepts, `validate --strict` fails any
+  concept with no link in or out as an orphan. `relate` each new concept to one
+  it builds on; one link counts for both ends.
+- `update --body` replaces the whole body, including the `# Related Concepts`
+  list that `relate` appends. Copy that list into the new body or rerun
+  `relate`.
+- Point `code_refs` at tracked files. A gitignored path is absent from a fresh
+  clone, where `validate --drift` warns about it.
 - `end-of-file-fixer` still runs on the bundle and may trim a trailing blank
   line okf leaves. If pre-commit says a file was modified, `git add knowledge`
   and rerun.
