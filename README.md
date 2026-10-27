@@ -101,18 +101,63 @@ Directly add packages (this will edit the pixi toml and install):
 pixi add your-package
 ```
 
-## AI Agents
+## Harness Customization Framework
 
 The template is set up for AI coding agents such as Claude Code, Codex, Copilot,
-Cursor, and Gemini CLI:
+Cursor, and Gemini CLI. Everything below is read by agents only; it does not
+change how the project builds or runs.
 
-- [`AGENTS.md`](AGENTS.md) is the agent entry point. It points to the rules in
-  [`.agents/rules/`](.agents/rules/), which agents load on demand.
-- [`.agents/skills/`](.agents/skills/) holds task skills such as `commit`,
-  `push`, `create-pr`, `merge-pr`, and `okf-memory`; `.claude/skills` links
-  there so Claude Code finds them.
-- [`knowledge/`](knowledge/) is project memory: an OKF bundle that agents read
-  and write with `pixi run okf`, as the `okf-memory` skill describes.
+### Instruction entry points
+
+What an agent reads first.
+
+| Path             | Role                                                                                                                      |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `AGENTS.md`      | The harness-neutral entry point. Kept short: five non-negotiables, a rule index, and the provenance of the adapted rules. |
+| `CLAUDE.md`      | Contains only `@AGENTS.md`, so Claude Code reads the same file.                                                           |
+| `.claude/skills` | Symlink to `.agents/skills`, so Claude Code discovers the skills.                                                         |
+
+### On-demand rules
+
+Eight files in [`.agents/rules/`](.agents/rules/). Each opens with a "Load
+when:" line, so an agent reads it only when it is relevant.
+
+- **Behavior:** `working-agreement.md` and `contribution-discipline.md` aim to
+  reduce common LLM coding mistakes. They are adapted from
+  [obra/superpowers](https://github.com/obra/superpowers) and
+  [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills).
+- **Orientation:** `repository-map.md`, `pixi-environments.md`,
+  `pre-commit-and-quality.md`, `onboarding.md`, and `troubleshooting.md` hold
+  context a human picks up over time and an agent needs written down.
+- **Optional pattern:** `mkdocs-okf-knowledge-bundle.md` covers rendering an
+  OKF-managed knowledge bundle with mkdocs.
+
+### Skills
+
+Nine step-by-step recipes at `.agents/skills/<name>/SKILL.md`: `commit`, `push`,
+`create-pr`, `merge-pr`, `create-issue`, `release`, `clean-branches`, `docs`,
+and `okf-memory`. Each covers a workflow a human does by habit and sets hard
+rules for the agent, such as never force-pushing and never force-deleting a
+branch.
+
+### Project memory
+
+[`knowledge/`](knowledge/) is an OKF bundle for project memory. It records what
+the code cannot show (decisions, data caveats, and constraints) and is kept
+separate from any docs site on purpose. The template ships it empty, with only
+`index.md` and `log.md`; agents read and write it with `pixi run okf`, as the
+`okf-memory` skill describes.
+
+Supporting machinery:
+
+- `okf-agent-memory` is a dependency of the `okf` feature in `pixi.toml`, which
+  the `default` environment includes.
+- The `okf-memory` skill requires `pixi run okf search --for-path <file>` before
+  the first edit in a subsystem. A `hold` hit means stop and confirm with the
+  user; a `constraint` hit lists invariants the change must keep.
+- `pixi run okf validate --strict --drift` checks the bundle.
+- Prettier excludes `knowledge/` in `.pre-commit-config.yaml`, because
+  reformatting corrupts the frontmatter.
 
 A project that doesn't want project memory can remove the `okf` feature from the
 `default` environment in `pixi.toml`, then delete `.agents/skills/okf-memory/`
