@@ -53,6 +53,14 @@ body:
         ### Onboarding Steps
 
         - [ ] Clone the repository and navigate into it
+        - [ ] Set your git name and email (skip if already configured) and log in to GitHub with the GitHub CLI
+
+          ```bash
+          git config --global user.name "Your Name"
+          git config --global user.email "you@example.com"
+          pixi run gh auth login  # answer Yes to "Authenticate Git with your GitHub credentials?"
+          ```
+
         - [ ] Run the following command to set up your environment, install dependencies and get the project ready to go
 
           ```bash
@@ -65,7 +73,7 @@ body:
         git checkout -b onboarding-<your-name>
         git add --update
         git commit --message "chore: complete onboarding for <your-name>"
-        gh pr create --title "Onboarding: <your-name>" --body "This is my first PR" --label "onboarding" --web
+        pixi run gh pr create --title "Onboarding: <your-name>" --body "This is my first PR" --label "onboarding" --web
         ```
 
         ### Resources
