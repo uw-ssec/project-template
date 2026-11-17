@@ -73,7 +73,7 @@ Resolves #\<issue-number>
 
 - [ ] `pre-commit run --all-files` passes and CI is green
 - [ ] PR title follows
-      [Conventional Commits](https://github.com/uw-ssec/rse-guidelines/blob/main/conventional-commits.md)
+      [Conventional Commits](https://github.com/uw-ssec/rse-guidelines/blob/main/docs/fundamentals/conventional-commits.md)
 - [ ] Change is within the sizing targets (200-400 lines), or the reason it
       cannot be split is explained above
 - [ ] Tests added/updated where needed
