@@ -50,7 +50,7 @@ why it would be rejected and what would need to change.
 - **One problem per PR.** PRs bundling multiple unrelated changes should be
   split.
 - **Use
-  [Conventional Commits](https://github.com/uw-ssec/rse-guidelines/blob/main/conventional-commits.md)**
+  [Conventional Commits](https://github.com/uw-ssec/rse-guidelines/blob/main/docs/fundamentals/conventional-commits.md)**
   for commit messages and PR titles.
 - **Link the issue** the PR closes: `Resolves #<issue-number>`.
 - **Describe the problem you solved**, not just what you changed.
